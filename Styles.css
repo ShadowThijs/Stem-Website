@@ -1,6 +1,8 @@
 body {
     background-color: #616161;
     font-family: "Courier New";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
 }
 h1 {
     color: white; 
@@ -80,15 +82,14 @@ li a {
   text-decoration: none;
 }
   
-li a:hover:not(.active) {
+li a:hover {
   background-color: rgb(0, 0, 0);
 }
 
 .square {
   border-radius: 15px;
   padding: 5px 15px;
-  height: 500px;
-  max-height: 800px;
+  height: fit-content;
   position: relative;
   top: 10px;
   background-color: #333;
@@ -97,10 +98,5 @@ li a:hover:not(.active) {
 
 .topbar-right {
   float: right!important;
-}
-
-.active {
-  background-color: whitesmoke;
-
 }
 
