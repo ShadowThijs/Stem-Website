@@ -1,40 +1,109 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="/Stem-Website/Styles.css">
+    <link rel="stylesheet" href="../Styles.css">
     <title>Noa</title>
 </head>
 
 <body>
     <ul>
-        <li><a style="color: rgb(145, 175, 103);" href="/Stem-Website/Main.html">Home</a></li>
+        <li><a style="color: rgb(145, 175, 103);" href="../index.html">Home</a></li>
         <div class="dropdown">
             <button class="dropbtn">Wie/Wat</button>
             <div class="dropdown-content">
-              <a href="/Stem-Website/Wie-Wat/Wat-is-stem.html">Wat is STEM?</a>
-              <a href="/Stem-Website/Wie-Wat/Wie-zijn-wij.html">Wie zijn wij?</a>
+              <a href="../Wie-Wat/Wat-is-stem.html">Wat is STEM?</a>
+              <a href="../Wie-Wat/Wie-zijn-wij.html">Wie zijn wij?</a>
             </div>
           </div>
         <div class="dropdown">
             <button class="dropbtn">Onze projecten</button>
             <div class="dropdown-content">
-              <a href="/Stem-Website/Onze projecten/Noa.html">Noa</a>
-              <a href="/Stem-Website/Onze projecten/Ruben.html">Ruben</a>
-              <a href="/Stem-Website/Onze projecten/Matthew.html">Matthew</a>
+              <a href="../Onze projecten/Noa.html">Noa</a>
+              <a href="../Onze projecten/Ruben.html">Ruben</a>
+              <a href="../Onze projecten/Matthew.html">Matthew</a>
             </div>
           </div>
           <div class="dropdown">
             <button class="dropbtn">Seminarie</button>
             <div class="dropdown-content">
-              <a href="/Stem-Website/Seminarie/Projecten.html">Projecten</a>
-              <a href="/Stem-Website/Seminarie/Wat-houd-het-in.html">Wat houd het in</a>
+              <a href="../Seminarie/Projecten.html">Eindwerken</a>
+              <a href="../Seminarie/Wat-houd-het-in.html">Wat houd het in</a>
             </div>
         </div>
-        <li class="topbar-right"><a href="Login.html">Login</a></li>
+        <li class="topbar-right"><a href="../Login.php">Login</a></li>
       </ul>
     
       <div class="square Text_style">
-        <p> Welkom bij Noa's website<br>
-        Kweenie zet maar gewoon iets neer.
+        <p> 
+          <img style="float: right;" src="../images/Noa_Selfie.png" height="150">
+          <h2>Introduction</h2>
+          Hello there! I am a student from Antwerp who almost graduated in STEM. For this course I needed to make a thesis, 
+          to finish of my last year as a student. I had to come up with a project that had some social value. 
+          I started to think, look around in my surroundings, searched for advise from my relatives,... 
+          Eventually I came up with a project, that had some social value and would also be really handy in the catering industry (in which my dad is very active)...
+
+          Imagine you're entering a restaurant and the host asks you if you would like to put your jacket inside the cloakroom. 
+          You are doubtful... If you give your coat away, there is a risk of it being robbed... 
+          But if you take your coat with you, you would have to carry it with you the whole evening.
+
+          I found the perfect solution!
+
+          I present to you the Secure-Vestiaire-1.0 . 
+          A secure cloakroom, insert your coat, get a code, enter your unique code when you need your coat back and voila your coat comes out!
+
+          (Off course, this is just a model, in reality it would be much bigger and closed of)
+
+          <h2>Supplies</h2>
+          For this project I worked with the Lego mindstorm robot inventor:
+          <br>
+          - Lego mindstorm 51515 (full box)<br>
+          - Lego mindstorm Robot Inventor app (on your computer)
+<br>
+          <h2>Step 1: Learning</h2>
+          To start off with a new project you always need to have enough knowledge of the system that you are going to work with. 
+          The mindstorm robot inventor app let's you code with Python. Luckily for me, I had already gone through a course of the basics of Python in the first semester. 
+          But only learning Python was not enough. I started of the first months, 
+          learning how to work with the lego mindstorm robot. 
+          For this I suggest you watch <a href="https://www.youtube.com/watch?v=Xj3mUHbb4Z0&list=PLj_k_RHuTqaUojvL-J76TVjG2QEulzjU8&index=18">https://www.youtube.com/watch?v=Xj3mUHbb4Z0&list=PLj_k_RHuTqaUojvL-J76TVjG2QEulzjU8&index=18</a> . 
+          It's a series to learn the basics of using python inside the robot inventor app.
+
+          <h2>Step 2: Prototype1</h2>
+          To complete my project, I worked with several prototypes. I suggest you do the same. For my first prototype I needed to complete the following:
+
+        <br>  - Make a structure where I was able to place the hub on top and make use of motors to let a conveyer belt move around in 'the air'. (this is the structure seen in the images)
+        <br>  - If I clicked the right button, the band needed to move to the right.
+        <br>  - If I clicked the left button, the band would stop.
+
+          <h2>Step 3: Prototype 2</h2>
+          For the second prototype I needed to complete the following:
+
+        <br>  - Make a counting system: if right was pressed count = count + 1
+        <br>  - Make a enter button: if left was pressed the belt would move for seconds(count)
+<br>
+<img src="../images/Vestiare_Noa_1.png" height="370">
+          
+          <h2>Step 4: Prototype 3</h2>
+          
+          In prototype 3 I inserted some very important sensors: the distance sensor and the color sensor.<br>
+          
+          I threw out the counting system with the buttons and made a system that would work everywhere. Let the belt move and wait for the color sensor to see red
+          Use the color sensor (and a red item on the band):<br>
+          If the color sensor sees red: count = 0<br>
+          If the distance sensor sees an item close: the count = count +1<br>
+          With these sensors I was able to identify the count of 'slots' as I call them. These would correspond to clothing hangers in real life.
+
+          
+          <h2>Step 5: Prototype 4</h2>
+          The following prototype is very complicated. I implemented dictionaries (to make a database of the codes for the slots), a randomizer to make a code, and a way to let the customer insert the code.
+
+          I put all of these together and organized them in functions, so that I could call them multiple times (corresponding with multiple customers).
+
+          After a lot of effort it finally worked.
+
+          
+          <h2>Step 6: Final Product</h2>
+          To finish off the project I worked on the user interface. For this I worked with the light matrix on the hub.
+
+          To learn how to work with the light.matrix I would suggest to use 'the help book' on the right side of your programming site.
         </p>
       </div>
 

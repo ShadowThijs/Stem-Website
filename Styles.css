@@ -8,12 +8,16 @@ h1 {
     color: white; 
 }
 h2 {
-    color: white; 
+    color: rgb(145, 175, 103); 
 }
 .Text_style {
     color: rgb(145, 175, 103);
 }
 
+img {
+  float: left;
+  margin: 10px;
+}
 
 /* Dropdown Button */
 .dropbtn {
@@ -100,3 +104,6 @@ li a:hover {
   float: right!important;
 }
 
+a {
+  color: rgb(176, 212, 126);
+}

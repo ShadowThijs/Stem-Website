@@ -1,40 +1,96 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="/Stem-Website/Styles.css">
+    <link rel="stylesheet" href="../Styles.css">
     <title>Matthew</title>
 </head>
 
 <body>
     <ul>
-        <li><a style="color: rgb(145, 175, 103);" href="/Stem-Website/Main.html">Home</a></li>
+        <li><a style="color: rgb(145, 175, 103);" href="../index.html">Home</a></li>
         <div class="dropdown">
             <button class="dropbtn">Wie/Wat</button>
             <div class="dropdown-content">
-              <a href="/Stem-Website/Wie-Wat/Wat-is-stem.html">Wat is STEM?</a>
-              <a href="/Stem-Website/Wie-Wat/Wie-zijn-wij.html">Wie zijn wij?</a>
+              <a href="../Wie-Wat/Wat-is-stem.html">Wat is STEM?</a>
+              <a href="../Wie-Wat/Wie-zijn-wij.html">Wie zijn wij?</a>
             </div>
           </div>
         <div class="dropdown">
             <button class="dropbtn">Onze projecten</button>
             <div class="dropdown-content">
-              <a href="/Stem-Website/Onze projecten/Noa.html">Noa</a>
-              <a href="/Stem-Website/Onze projecten/Ruben.html">Ruben</a>
-              <a href="/Stem-Website/Onze projecten/Matthew.html">Matthew</a>
+              <a href="../Onze projecten/Noa.html">Noa</a>
+              <a href="../Onze projecten/Ruben.html">Ruben</a>
+              <a href="../Onze projecten/Matthew.html">Matthew</a>
             </div>
           </div>
           <div class="dropdown">
             <button class="dropbtn">Seminarie</button>
             <div class="dropdown-content">
-              <a href="/Stem-Website/Seminarie/Projecten.html">Projecten</a>
-              <a href="/Stem-Website/Seminarie/Wat-houd-het-in.html">Wat houd het in</a>
+              <a href="../Seminarie/Projecten.html">Eindwerken</a>
+              <a href="../Seminarie/Wat-houd-het-in.html">Wat houd het in</a>
             </div>
         </div>
-        <li class="topbar-right"><a href="Login.html">Login</a></li>
+        <li class="topbar-right"><a href="../Login.php">Login</a></li>
       </ul>
     
       <div class="square Text_style">
-        <p> Welkom bij Matthews project<br>
-        Ik wil de wereld verbeteren door de wereld voor te bereiden op aardbevingen met mijn aardbeving simulator.
+
+        <p><img style="float: right;" src="../images/Matthew_Selfie.png" height="150">
+          <h2>Introduction</h2> 
+          I will put this in the unity asset store so that fellow programmer can use it to make more realistic vibrations.
+          For my Stem course, I needed to make a Thesis. I decided to code a vibration simulator, which I decided to make in Unity.
+          Now I am going to explain how I build it, which issues I came across,
+          This can then be used to make better earthquakes, or anything else which involves vibrations.
+          and which things can still be improved upon by a programmer that is more adept than me. <br><br>
+
+          <h2>Step 1: coding vibration</h2> This was actually quite easy, you just add an elastic force to an object and when it's out of
+           balance it vibrates. I coded this by giving an equilibrium point to the object when the scene is loaded,
+           namely it's begin position. Then I constantly apply a force to it, this force is equal to the distance between the
+           object and it's equilibrium point multiplied by the elasticity constant which you can change.
+           The direction of the force is also towards the equilibrium point, this makes it vibrate when it's out of balance. <br><br>
+          
+          <h2>Step 2: coding waves</h2>> This was way harder and took me a long time and several failed attempts.
+           Eventually I found a usefull tutorial that helped me to continue.
+           <a href="https://www.youtube.com/watch?v=kRJE771mikA&t=87s">https://www.youtube.com/watch?v=kRJE771mikA&t=87s</a>
+           It was still not what I needed but it was a good basis that I tweaked to fit my purpose.
+           The video had a tutorial for an explosion, that casted an overlapSphere that would grow when it was activated.
+           An overlapSphere creates an array of colliders that are in it's domain.
+           The problem is that the same object could be in the same array multiple times, and does be hit multiple times.
+           I fixed this by creating a seperate list that would check if an object of the array was already in the list and
+           would only add them, if it wasn't in the list yet. The force would only be aplied on the objects in the list.
+           Instead of sending the force away from the source, all objects would be sent in the same direction,
+           the vibration direction which you can change. I also made it so the force would diminish the further it was from the source.
+           The explosion effects made it so that I couldn't change the location of the source so I got rid of it.
+           Now all objects with in the max radius, that you can also change, will be affected by the pulse when it reaches them,
+           causing a wave. You can also change the base-force and speed of the pulse. <br> <br>
+          
+          <h2>Step 3: shaking ground</h2> It is one thing to make individual objects be affected by waves but
+           it is a whole other thing to make an entire plain like the ground shake.
+           First i looked up how to make ground and ended up finding brackeys videos on mesh generations which I recommend watching
+           <a href="https://www.youtube.com/watch?v=eJEpeUH1EMg">https://www.youtube.com/watch?v=eJEpeUH1EMg</a> and
+           <a href="https://www.youtube.com/watch?v=64NblGkAabk">https://www.youtube.com/watch?v=64NblGkAabk</a>.
+           I had my ground now, but how do I shake it. It took me several weeks but I found a way to solve this problem.
+           A mesh is defined by several vertices which create it's shape. So I decided to make an empty game object,
+           called it verticeBody, give it a rigidbody, collider and an ElasticityForce script.
+           Made a prefab out of it so I could instatiate it. And when the mesh was generated made a verticeBody (VB) for every vertice,
+           made the equilibriumpoint of the VB equal to the beginposition of it's corresponding.
+           And then make it so the position of the vertice changes continuously so it equals the position of the VB,
+           therefor if the VB starts to vibrate the vertex also changes. This makes it so that the mesh vibrates.
+           To make a shaking piece of ground you need to make an empty game object but th MeshGenerator script on it,
+           fill in the desired sizes and put your VB in the spot that says Vertice Rigidbody.<br><br>
+          
+          <h2>Step 4: bug fixing</h2>
+           There were a lot of them but most of them where simpel fixes like the wave inverting when far enough instead of stopping.
+           Other ones where more difficult like the mesh not vibrating for vertices that where on negative x and z coördinates.
+           But at this point of the project I think I got rid of all of them, or atleast the worst/most visible ones.<br><br>
+          
+          <h2>Step 5: How to improve</h2> The final result is a module that simulates realistic(-ish) vibrations.
+           But there is still room for improvement. So can the vibrations on the mesh still be optimized,
+           because it works but it can by quite intensive for the computer at larger sizes.
+           You can also make it so you can still move objects like launching a canonball,
+           but starts vibrating as it hits a wall for example. Because in the current state vibrating objects can't be moved,
+           I suggest making a public enum, where you create 2 states a move state where you can move by making it so the equilibrium point
+           is equal to the current position while in this state, and a vibrate state were it works as usual.
+           Then you can switch in between these states when the situation asks for it. You can modify it in anyway you like.<br><br>
         </p>
       </div>
 

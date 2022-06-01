@@ -1,40 +1,81 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="/Stem-Website/Styles.css">
+    <link rel="stylesheet" href="../Styles.css">
     <title>Ruben</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
 <body>
     <ul>
-        <li><a style="color: rgb(145, 175, 103);" href="/Stem-Website/Main.html">Home</a></li>
+        <li><a style="color: rgb(145, 175, 103);" href="../index.html">Home</a></li>
         <div class="dropdown">
             <button class="dropbtn">Wie/Wat</button>
             <div class="dropdown-content">
-              <a href="/Stem-Website/Wie-Wat/Wat-is-stem.html">Wat is STEM?</a>
-              <a href="/Stem-Website/Wie-Wat/Wie-zijn-wij.html">Wie zijn wij?</a>
+              <a href="../Wie-Wat/Wat-is-stem.html">Wat is STEM?</a>
+              <a href="../Wie-Wat/Wie-zijn-wij.html">Wie zijn wij?</a>
             </div>
           </div>
         <div class="dropdown">
             <button class="dropbtn">Onze projecten</button>
             <div class="dropdown-content">
-              <a href="/Stem-Website/Onze projecten/Noa.html">Noa</a>
-              <a href="/Stem-Website/Onze projecten/Ruben.html">Ruben</a>
-              <a href="/Stem-Website/Onze projecten/Matthew.html">Matthew</a>
+              <a href="../Onze projecten/Noa.html">Noa</a>
+              <a href="../Onze projecten/Ruben.html">Ruben</a>
+              <a href="../Onze projecten/Matthew.html">Matthew</a>
             </div>
           </div>
           <div class="dropdown">
             <button class="dropbtn">Seminarie</button>
             <div class="dropdown-content">
-              <a href="/Stem-Website/Seminarie/Projecten.html">Projecten</a>
-              <a href="/Stem-Website/Seminarie/Wat-houd-het-in.html">Wat houd het in</a>
+              <a href="../Seminarie/Projecten.html">Eindwerken</a>
+              <a href="../Seminarie/Wat-houd-het-in.html">Wat houd het in</a>
             </div>
         </div>
-        <li class="topbar-right"><a href="Login.html">Login</a></li>
+        <li class="topbar-right"><a style="color: rgb(145, 175, 103)" href="../Login.php">Login</a></li>
       </ul>
     
       <div class="square Text_style">
-        <p> Welkom bij Rubens website<br>
-        Ik ben de enigste volbloed Stemmer.<br> Lifes hard
+      
+        <p><img style="float: right;" src="../images/Ruben_Selfie.png" height="150">
+           <h2>Introduction</h2>
+I'm almost ending my high school career. For my last project for STEM I had to come up with a project whit some social value. So I decided to make an app for children who need to learn how to read, write and speak. I made this app with a rather simplistic, but nevertheless kind of difficult, software: MIT app inventor. I struggled a lot but I think I can be happy with the final result.<br><br>
+<img src="../images/Mit_app_inventor.png" height="100">
+<h2>Supplies</h2>
+For this project I didn't need a lot of supplies.<br>
+- Most importantly: access to a computer <br>
+- Mobile ANDROID phone with MIT AI2 companion app<br><br>
+ 
+<h2>Step 1: Learn How To Work With MIT App Inventor</h2>
+The most important thing, you always have to start with, is learn the basics. I was lucky I had already worked with MIT in previous years, but you have to know the basics. MIT app inventor looks easy when starting, but you really have to know what all the blocks do. You should definitely know how to make a good lay-out for your app. I suggest you watch some beginner tutorials if you've not yet worked with MIT app inventor<br><br>
+<h2>Step 2: Thinking Out The Lay-Out</h2>
+When you control the basics of MIT you can start with designing your app. I will now explain the different components of the app:<br>
+1.First, the home screen: you start with 3 options, speak, write or read. I used icons to make make it clear for the children to.<br>
+2. We'll start with the speak option. When you continue you get 2 options: exercise with parents or game. We'll start with the first one.
+This screen (Spreken_Screen2) is designed to use together with an adult or at least someone who can read. The adult can choose a picture out of the phone's gallery. Then they have to fill in the thing showed at the picture validate it and it will be shown under the textbox. When the user presses clear, the exercise can start again.
+Then the second option, the game. At this screen (Spreken_screen) the child gets the picture of a thing, in this case a cow. Then the child has to press the sound button and pronounce the word at the right way. When the user is done speaking, it has to press ok and the app will tell whether the word is right or wrong. When the child is ready, he/she presses next and the next picture will appear.<br>
+3. The next module is the writing option.
+It's built the same way as the speaking game. The user gets a picture but know the child has to type the correct word and the app validate if or if not it's correct. The settings part of this screen I will explain in a second.<br>
+4. The last module is the reading option. It's designed the same way as the rest of the small games, but in this case the child gets a word and has to point out the right picture.
+ 
+One difference I made in the writing component is that I gave the user the option to add more pictures. Now I use the same 4 pictures every time again. Now the user can enter a question, an answer and a picture. From then on this question will aways be in the row of questions.<br><br>
+ 
+<h2>Step 3: What components I used</h2>
+Now I'll explain how I made my plan work.
+For my writing game itself (without the settings) I used 3 different components.<br>
+First of all, an image component, here the picture of the animal or thing is being showed. I also used a textbox component, here the user has to type in its answer.<br>
+Lastly I used 3 buttons, one to validate the answer and one to get the a new picture/question. The last button is just a simple button to get back to the home screen.<br>
+For my reading module it's a little bit different. Here I used a label-component that shows the item that has to be found. Then I used 4 buttons with 4 different pictures in, these are the options available. When the child pointed out the right image a label will tell if it is correct or wrong. Here also are a Back and next button present.
+The speaking game has one different component extra. It has a SpeechRecognizer. When the user presses the sound button, the device will call up the microphone and the user can say its answer.
+In the speaking exercise I implemented a ImagePicker, this gives the user the chance to choose a picture from their own gallery.
+Then for the settings module at the writing screen. Here I used to 2 textbox so the user can add an answer and question. There also is a ImagePicker present to choose a picture from.<br><br>
+
+<h2>Step 4: what blocks I used</h2>
+For explaining what blocks I used, I will use the writing module as example. This because all the games are based upon these blocks. I will explain the blocks using the picture attached.
+So at the top you can see the variables. For each component (question, answer and picture) I had to make a separate list and matching variable. Further I had to make variable that was keeping hold of the number of question. So my first question got number 1, my second number 2 and so on. The last thing at the top handles back button, so when it's pressed it will open another screen, namely the home screen.
+ 
+So now the important stuff. When the Answer button is clicked the app will look if the word filled in in the textbox is the same as the answer in the list. When it's the same, RIGHT will appear in the label otherwise WRONG will appear. Then the next component, when the Next button is clicked, the label where right or wrong appeared will change back to nothing, so as the textbox the answer was filled in. Then the app will count 1 number extra and show the next answer and picture.
+Now I'll explain how to settings module works. It consist of again 3 almost exactly the same components. So when the add button is clicked, the app will look if the item is not already in the list. When it isn't the app will add the item to the list and store it in the tinyDB. When it is in the list it will call notifier saying: "Item already in list". The app will also look if an item is filled in. When it isn't it will also call a notifier. The answer and picture component are built the same way.
+ 
+The rest of the screens are built almost exactly the same. They don't need extra explanation but I will add the blocks in the attachment.
         </p>
       </div>
 
