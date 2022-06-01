@@ -21,23 +21,17 @@
                 . mysqli_connect_error());
         }
          
-        // Taking all 5 values from the form data(input)
+        // Taking values from the form data(input)
         $user_name =  $_REQUEST['user_name'];
         $user_pass = $_REQUEST['user_pass'];
         
          
         // Performing insert query execution
-        // here our table name is college
         if ($_POST["user_pass"] === $_POST["pass_confirm"]) {
             $sql = "INSERT INTO login_data  VALUES ('$user_name',
             '$user_pass')";
          
-            if(mysqli_query($conn, $sql)){
-                echo "<h3>data stored in a database successfully."
-                    . " Please browse your localhost php my admin"
-                    . " to view the updated data</h3>";
-    
-            echo nl2br("\n$user_name\n $user_pass\n");
+            if(mysqli_query($conn, $sql)){ 
                 header('Location: index.html');
             } else{
                 echo "ERROR: Hush! Sorry $sql. "
