@@ -19,7 +19,6 @@ img {
   margin: 10px;
 }
 
-/* Dropdown Button */
 .dropbtn {
     font-family: "Courier New";
     background-color: #333;
@@ -30,14 +29,13 @@ img {
     position: sticky;
   }
   
-  /* The container <div> - needed to position the dropdown content */
+
   .dropdown {
     display: inline-block;
   }
   
-  /* Dropdown Content (Hidden by Default) */
+
   .dropdown-content {
-    /* border-radius: 0px 0px 15px 15px; */
     font-family: "Courier New";
     display: none;
     position: absolute;
@@ -47,7 +45,6 @@ img {
     z-index: 1;
   }
   
-  /* Links inside the dropdown */
   .dropdown-content a {
     color: rgb(145, 175, 103);
     padding: 12px 16px;
@@ -55,13 +52,10 @@ img {
     display: block;
   }
   
-  /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: rgb(0, 0, 0);}
   
-  /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
   
-  /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #333;}
 
   ul {
